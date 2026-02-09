@@ -1,6 +1,6 @@
 name: Build docker image
 on: 
-  workflow-dispatch:
+  workflow_call:
 
 jobs:
   build-docker:
@@ -9,4 +9,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build image
-        run: docker build -t ${{ image_name }} .
+        run: docker build -t ${{ inputs }} .
