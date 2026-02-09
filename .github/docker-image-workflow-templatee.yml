@@ -1,0 +1,12 @@
+name: Build docker image
+on: 
+  workflow-dispatch:
+
+jobs:
+  build-docker:
+    runs-on: buntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build image
+        run: docker build -t ${{ image_name }} .
